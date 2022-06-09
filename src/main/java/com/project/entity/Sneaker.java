@@ -28,7 +28,7 @@ public class Sneaker implements Serializable {
 	private String colorway;
 	@Column(name = "release_date")
 	private String releasedate;
-	@Column(name = "release_price")
+	@Column(name = "retail_price")
 	private Integer retailprice;
 	@Column(name = "market_value")
 	private Integer marketvalue;
