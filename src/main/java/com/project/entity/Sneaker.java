@@ -1,16 +1,38 @@
-package com.project;
+package com.project.entity;
 
+import java.io.Serializable;
 
-public class Sneaker {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+@Entity
+@Table(name = "sneaker")
+public class Sneaker implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
+	//class variables
+	@Id
+	@Column(name = "sku")
 	private String sku;
+	@Column(name = "name")
 	private String name;
+	@Column(name = "brand")
 	private String brand;
+	@Column(name = "gender")
 	private String gender;
+	@Column(name = "colorway")
 	private String colorway;
+	@Column(name = "release_date")
 	private String releasedate;
+	@Column(name = "release_price")
 	private Integer retailprice;
+	@Column(name = "market_value")
 	private Integer marketvalue;
+	@Column(name = "image")
 	private String image;
 	
 	public Sneaker(String sku, String name, String brand, String gender, String colorway, String releasedate,
