@@ -14,8 +14,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
+@Table(name = "user")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +28,7 @@ public class User implements Serializable {
 	private String email;
 	@Column(name = "first_name")
 	private String firstName;
-	@Column(name = "last_Name")
+	@Column(name = "last_name")
 	private String lastName;
 	@Column(name = "password")
 	private String password;
@@ -78,5 +81,12 @@ public class User implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + ", password=" + password
+				+ "]";
+	}
+	
 
 }

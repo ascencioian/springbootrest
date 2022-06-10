@@ -40,6 +40,21 @@ public class SneakerServiceImpl implements SneakerService{
 		
 		return s1;
 	}
+
+	@Override
+	public void deleteSneaker(String sku) {
+		// TODO Auto-generated method stub
+		repo.deleteById(sku);
+	}
+
+	
+	//--------------------------------update
+	
+	
+	
+	
+	//--------------------------------delete
+	
 	
 	
 

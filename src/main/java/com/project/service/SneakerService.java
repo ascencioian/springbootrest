@@ -6,15 +6,20 @@ import java.util.Optional;
 import com.project.entity.Sneaker;
 
 public interface SneakerService {
-	  //save operation
-	  //Sneaker saveSneaker(Sneaker s1);
+	  //----------get operation
 	  
 	  // --------------------read all
 	   List<Sneaker> getSneakers();
-	   //get one
+	   //--------------------get one
 	   Optional<Sneaker> getSneaker(String sku);
 	   
-	   //---------------------post
+	   //-----------post
 	   Sneaker createSneaker(Sneaker s1);
+	   
+	   //-----------put
+	   
+	   //-----------delete
+	   
+	   void deleteSneaker(String sku);
 	
 }
