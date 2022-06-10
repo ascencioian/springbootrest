@@ -16,7 +16,7 @@ public class SneakerServiceImpl implements SneakerService{
 	private SneakerRepository repo;
 	
 
-	//read
+	//------------------------------read all
 	@Override
 	public List<Sneaker> getSneakers() {
 		// TODO Auto-generated method stub
@@ -31,5 +31,16 @@ public class SneakerServiceImpl implements SneakerService{
 		return repo.findById(sku);
 		
 	}
+
+	//-------------------------------post
+	@Override
+	public Sneaker createSneaker(Sneaker s1) {
+		// TODO Auto-generated method stub
+		repo.save(s1);
+		
+		return s1;
+	}
+	
+	
 
 }

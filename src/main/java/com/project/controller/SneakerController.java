@@ -7,6 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +22,9 @@ public class SneakerController {
 	
 	@Autowired
 	private SneakerService repo;
-
+	
+		//-----------------------------------get
+	
 		@GetMapping("/sneakers")
 		public List<Sneaker> getSneakers(){
 			System.out.println("getSneakers called");
@@ -36,5 +40,11 @@ public class SneakerController {
 			
 		}
 		
-		
+		//-----------------------------------post
+		@PostMapping("/sneaker")
+		public Sneaker createSneaker(@RequestBody Sneaker s1) {
+			System.out.println("createSneaker called");
+			return repo.createSneaker(s1);
+			
+		}
 }
