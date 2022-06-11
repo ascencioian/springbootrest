@@ -3,23 +3,23 @@ package com.project.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.project.entity.Sneaker;
 
-public interface SneakerService {
+import com.project.entity.User;
+
+public interface UserService {
 	  //----------------------------get operation------------
 	  
 	  //read all
-	   List<Sneaker> getSneakers();
+	   List<User> getUsers();
 	   //get one
-	   Optional<Sneaker> getSneaker(String sku);
+	   Optional<User> getUser(String email);
 	   
 	   //----------------------------post----------------------
-	   Sneaker createSneaker(Sneaker s1);
+	   User createUser(User u1);
 	   
 	   //----------------------------put-----------------------
 	   
 	   //-------------------------delete-----------------------
 	   
-	   void deleteSneaker(String sku);
-	
+	   void deleteUser(String email);
 }
