@@ -27,7 +27,8 @@ public class IndexController {
 	
 	@GetMapping("/")
 	public String home(Model model) {
-			
+		User user = new User();
+	    model.addAttribute("user", user);
 		model.addAttribute("something", "this is something");
 		model.addAttribute( "sneaker", repo.getSneakers());
 		return "index";
@@ -46,7 +47,7 @@ public class IndexController {
 	    }
 	  
 	  @PostMapping("/signup")
-	  public String submitForm(@ModelAttribute("user") User user) {
+	  public String submitLoginForm(@ModelAttribute("user") User user) {
 		  System.out.println(user);
 		  userRepo.createUser(user);
 	      return "index";

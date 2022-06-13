@@ -109,7 +109,7 @@
                         Introducing product X.
                         Our lightest shoe, ever. 
                     </h1>
-                     <h1 th:text="${something}" />
+                 
                     <a href="/html/product1.html"> <button class="btn btn-outline-danger btn-lg">Shop Now</button></a>
                 </div>
                 <img class="img-fluid w-50 d-none d-md-block"  src="/img/png/homePageSneakerDesktop.png" alt="Promo of product X">
@@ -124,7 +124,7 @@
             
             <div class="row">
               
-                <div class="col-md" th:each="sneaker: ${sneaker}">
+                <div class="col-md" th:each="sneaker, stat: ${sneaker}" th:if="${stat.count < 5}">
                     <a href="/html/product1.html">
                         <div class="card bg-white text-dark ">
                         
@@ -134,7 +134,7 @@
                     
                     <h4 th:text="${sneaker.name}"/>
                   
-                    <h4 th:text="${sneaker.marketvalue}"
+                    <h4 th:text="${sneaker.marketvalue}"/>
                     
                 </div>
                     
@@ -185,34 +185,35 @@
             <div class="modal-body">
                 <p class="lead">Never miss a drop. Ever.</p>
 
-                <form class="form" id="form">
+                <form class="form" id="form" action="#" th:action="@{/signup}" method="post" th:object="${user}">
+                
 
                     <div class="mb-3">
                       <label for="first-name" class="col-form-label">
                         First Name:
                       </label>
-                      <input type="text" class="form-control " id="firstName" />
+                      <input type="text" class="form-control " id="firstName" th:field="*{firstName}" />
                       <img src="/img/svg/check-circle.svg" alt="check-circle" class="formIcon check">
                       <img src="/img/svg/exclamation-circle.svg" alt="check-circle" class="formIcon exclamation">
             <small class="formErrorMessage">Error message</small>
                     </div>
                     <div class="mb-3">
                       <label for="last-name" class="col-form-label">Last Name:</label>
-                      <input type="text" class="form-control " id="lastName" />
+                      <input type="text" class="form-control " id="lastName" th:field="*{lastName}" />
                       <img src="/img/svg/check-circle.svg" alt="check-circle" class="formIcon">
                       <img src="/img/svg/exclamation-circle.svg" alt="check-circle" class="formIcon">
             <small class="formErrorMessage">Error message</small>
                     </div>
                     <div class="mb-3">
                       <label for="email" class="col-form-label">Email:</label>
-                      <input type="email" class="form-control" id="email" />
+                      <input type="email" class="form-control" id="email" th:field="*{email}" />
                       <img src="/img/svg/check-circle.svg" alt="check-circle" class="formIcon">
                       <img src="/img/svg/exclamation-circle.svg" alt="check-circle" class="formIcon">
             <small class="formErrorMessage">Error message</small>
                     </div>
                     <div class="mb-3">
                       <label for="password" class="col-form-label">Password:</label>
-                      <input type="password" class="form-control" id="password" />
+                      <input type="password" class="form-control" id="password" th:field="*{password}"/>
                       <img src="/img/svg/check-circle.svg" alt="check-circle" class="formIcon">
                       <img src="/img/svg/exclamation-circle.svg" alt="check-circle" class="formIcon">
             <small class="formErrorMessage">Error message</small>
@@ -224,13 +225,15 @@
                       <img src="/img/svg/exclamation-circle.svg" alt="check-circle" class="formIcon">
             <small class="formErrorMessage">Error message</small>
                       </div>
+                     
+            
                   </form>
             </div>
 
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- submit button -->
-              <button type="button" class="btn btn-outline-success">Submit</button>
+              <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <!-- submit button -->
+            <button type="button"  class="btn btn-outline-success">Submit</button>
 
             </div>
           </div>
