@@ -15,7 +15,7 @@ import com.project.service.SneakerService;
 import com.project.service.UserService;
 
 @Controller
-public class IndexController {
+public class MainController {
 	
 	
 	
@@ -25,6 +25,7 @@ public class IndexController {
 	@Autowired
 	private UserService userRepo;
 	
+	//-----------------------------------------getters for views
 	@GetMapping("/")
 	public String home(Model model) {
 		User user = new User();
@@ -35,7 +36,14 @@ public class IndexController {
 	}
 	
 	
-	//-----------------------------sign up
+	  @GetMapping("/gallery")
+	    public String gallery(Model model) {
+	        //User user = new User();
+	        //model.addAttribute("user", user);
+		  model.addAttribute( "sneaker", repo.getSneakers());
+	         
+	        return "gallery";
+	    }
 	
 	  @GetMapping("/signup")
 	    public String showForm(Model model) {
@@ -45,6 +53,36 @@ public class IndexController {
 	         
 	        return "signup";
 	    }
+	  
+	  @GetMapping("/product")
+	    public String showProduct(Model model) {
+	        User user = new User();
+	        model.addAttribute("user", user);
+	        model.addAttribute( "sneaker", repo.getSneakers());
+	         
+	        return "product";
+	    }
+	  
+	  
+	  @GetMapping("/productX")
+	    public String showProductX(Model model) {
+	        User user = new User();
+	        model.addAttribute("user", user);
+	         
+	         
+	        return "productX";
+	    }
+	  
+	  @GetMapping("/login")
+	    public String showLogin(Model model) {
+	        User user = new User();
+	        model.addAttribute("user", user);
+	         
+	         
+	        return "login";
+	    }
+	  
+	  
 	  
 	  @PostMapping("/signup")
 	  public String submitLoginForm(@ModelAttribute("user") User user) {

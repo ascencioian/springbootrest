@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
     <!-- external css -->
-    <link rel="stylesheet" href="/css/product1.css">
+    <link rel="stylesheet" href="/css/product.css">
 </head>
 <body>
      <!-- header -->
@@ -39,7 +39,7 @@
             
             
             <div class="container justify-content-center position-absolute">
-                <a href="/html/index.html " class="link-dark text-decoration-none" ><h1>Sneakers & Shoes</h1></a>
+                <a href="#" th:href="@{/}" class="link-dark text-decoration-none" ><h1>Sneakers & Shoes</h1></a>
                 
             </div>
 
@@ -70,7 +70,7 @@
             <div class="container d-block">
                 <div class="row">
                     <div class="col-md-3 text-center text-white py-2">
-                        <a href="/html/gallery.html" class=""> <span>Sneakers</span></a>
+                        <a href="#" th:href="@{/gallery}" class=""> <span>Sneakers</span></a>
                     </div>
                     <div class="col-md-3 text-center text-white py-2">
                         <a href="#" class=""><span>Sports</span></a>
@@ -142,33 +142,26 @@
     </section>
 
       <!-- product -->
-      <section class="p-5 text-center">
+    <section class="p-5 text-center">
         <div class="container bg-light">
-            <h2 class="my-4 pt-4">New Releases</h2>
+            <h2 class="my-4 pt-4 " id="newReleasesHeader">New Releases</h2>
+            
             <div class="row">
-                <div class="col-md">
-                    <a href="/html/product1.html">
-                        <div class="card bg-white text-dark">
-                            <img class="img-fluid" src="/img/svg/products/sneakerForSale3.svg" alt="Promo of product X">
+              
+                <div class="col-md" th:each="sneaker, stat: ${sneaker}" th:if="${stat.count < 4}">
+                    <a href="#" th:href="@{/product}">
+                        <div class="card bg-white text-dark ">
+                        
+                            <img class="img-fluid " th:src="@{${sneaker.image}}" alt="Promo of product X">
                         </div>
                     </a>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
+                    
+                    <h4 th:text="${sneaker.name}"/>
+                  
+                    <h4 th:text="${sneaker.marketvalue}"/>
+                    
                 </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid " src="/img/svg/products/sneakerForSale2.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid" src="/img/svg/products/sneakerForSale1.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>   
+                    
             </div>
         </div>
     </section>
@@ -178,29 +171,19 @@
         <div class="container bg-light">
             <h3 class="my-4 pt-4">You May Like</h3>
             <div class="row">
-                <div class="col-md">
-                    <a href="/html/product1.html">
-                        <div class="card bg-white text-dark">
-                            <img class="img-fluid" src="/img/svg/products/sneakerForSale3.svg" alt="Promo of product X">
+                <div class="col-md" th:each="sneaker, stat: ${sneaker}" th:if="${stat.count < 4}">
+                    <a href="#" th:href="@{/product}">
+                        <div class="card bg-white text-dark ">
+                        
+                            <img class="img-fluid " th:src="@{${sneaker.image}}" alt="Promo of product X">
                         </div>
                     </a>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid " src="/img/svg/products/sneakerForSale2.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid" src="/img/svg/products/sneakerForSale1.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>   
+                    
+                    <h4 th:text="${sneaker.name}"/>
+                  
+                    <h4 th:text="${sneaker.marketvalue}"/>
+                    
+                </div> 
             </div>
         </div>
     </section>
