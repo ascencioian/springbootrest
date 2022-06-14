@@ -40,7 +40,15 @@ public class SneakerServiceImpl implements SneakerService{
 		
 		return s1;
 	}
-
+	
+	@Override
+	public List<Sneaker> createSneakers(List<Sneaker> sneakerList) {
+		// TODO Auto-generated method stub
+		
+		repo.saveAll(sneakerList);
+		
+		return sneakerList;
+	}
 
 	
 	//--------------------------------update
@@ -55,6 +63,8 @@ public class SneakerServiceImpl implements SneakerService{
 		// TODO Auto-generated method stub
 		repo.deleteById(sku);
 	}
+
+	
 
 	
 

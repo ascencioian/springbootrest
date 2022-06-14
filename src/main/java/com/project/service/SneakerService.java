@@ -16,10 +16,14 @@ public interface SneakerService {
 	   //----------------------------post----------------------
 	   Sneaker createSneaker(Sneaker s1);
 	   
+	   List<Sneaker> createSneakers(List<Sneaker> sneakerList);
+	   
 	   //----------------------------put-----------------------
 	   
 	   //-------------------------delete-----------------------
 	   
 	   void deleteSneaker(String sku);
+	   
+	   
 	
 }
