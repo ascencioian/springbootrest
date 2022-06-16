@@ -102,6 +102,9 @@
                     <h2 class="my-4" th:text="${s1.name}">
                         Product X
                     </h2>
+                    <h4 class="my-4" th:text="${s1.marketvalue}">
+                        Product X
+                    </h4>
 
                     <div class="dropdown my-4 d-block ">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -136,7 +139,7 @@
                     </div>
                     
                 </div>
-                <img class="img-fluid w-50 d-none d-sm-block" src="/img/svg/products/sneakerForSale3.svg" alt="Promo of product X">
+                 <img class="img-fluid " th:src="@{${s1.image}}" alt="product">
             </div>
         </div>
     </section>
