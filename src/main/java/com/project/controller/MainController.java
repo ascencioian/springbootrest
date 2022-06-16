@@ -96,8 +96,8 @@ public class MainController {
 	  }
 	  
 	  @PostMapping("/product")
-	  public String showproductForm(@ModelAttribute("s1") Sneaker s1) {
-	
+	  public String showproductForm(@ModelAttribute("s1") Sneaker s1, Model model) {
+		  model.addAttribute("s1", s1);
 		  System.out.println(s1);
 		 
 	      return "product";
