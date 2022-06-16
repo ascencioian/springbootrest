@@ -136,6 +136,43 @@
                   
                     <h4 th:text="${sneaker.marketvalue}"/>
                     
+                    <form action="#" th:action="@{/product}" method="post" th:object="${s1}">
+                    
+                        <div class="col-lg-7">
+                            <input type="text" placeholder="s1 name" class=""  th:value="${sneaker.name}">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="text" placeholder="s1 price" class="" th:value="${sneaker.marketvalue}" >
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="text" placeholder="s1 image" class="" th:value="${sneaker.image}">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="text" placeholder="s1 sku" class="" th:value="${sneaker.sku}" >
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="text" placeholder="s1 brand" class="" th:value="${sneaker.brand}" >
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="text" placeholder="s1 gender" class="" th:value="${sneaker.gender}" >
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="text" placeholder="s1 colorway" class="" th:value="${sneaker.colorway}" >
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="text" placeholder="s1 realease date" class="" th:value="${sneaker.releasedate}" >
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="text" placeholder="s1 retail price" class="" th:value="${sneaker.retailprice}" >
+                        </div>
+                        
+                        
+                        
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn btn-dark btn-sm">submit</button>
+                        </div>
+                    </form>
+                    
                 </div>
                     
             </div>
