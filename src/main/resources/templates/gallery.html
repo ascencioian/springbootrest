@@ -92,37 +92,67 @@
    
         </nav>
     </div>
-    <!-- product -->
+   <!-- product -->
     <section class="p-5 text-center">
         <div class="container bg-light">
-            <h2 class="my-4 pt-4">New Releases</h2>
+            <h2 class="my-4 pt-4 " id="newReleasesHeader">New Releases</h2>
+            
             <div class="row">
-                <div class="col-md">
-                    <a href="/html/product1.html">
-                        <div class="card bg-white text-dark">
-                            <img class="img-fluid" src="/img/svg/products/sneakerForSale3.svg" alt="Promo of product X">
+              
+                <div class="col-md" th:each="sneaker, stat: ${sneaker}" th:if="${stat.count < 4}">
+                    <a href="#" th:href="@{/product}">
+                        <div class="card bg-white text-dark ">
+                        
+                            <img class="img-fluid " th:src="@{${sneaker.image}}" alt="Promo of product X">
                         </div>
                     </a>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
+                    
+                    <h4 th:text="${sneaker.name}"/>
+                  
+                    <h4 th:text="${sneaker.marketvalue}"/>
+                    
+                    <form action="#" th:action="@{/product}" method="post" th:object="${s1}">
+                    
+                        <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 name" class=""  th:value="${sneaker.name}" th:name="name" th:id="name">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 price" class="" th:value="${sneaker.marketvalue}" th:name="marketvalue" th:id="marketvalue" >
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 image" class="" th:value="${sneaker.image}" th:name="image" th:id="image">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 sku" class="" th:value="${sneaker.sku}" th:name="sku" th:id="sku">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 brand" class="" th:value="${sneaker.brand}" th:name="brand" th:id="brand">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 gender" class="" th:value="${sneaker.gender}" th:name="gender" th:id="gender">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 colorway" class="" th:value="${sneaker.colorway}" th:name="colorway" th:id="colorway">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 realease date" class="" th:value="${sneaker.releasedate}" th:name="releasedate" th:id="releasedate">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 retail price" class="" th:value="${sneaker.retailprice}" th:name="retailprice" th:id="retailprice">
+                        </div>
+                        
+                        
+                        
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn btn-dark btn-sm my-2">submit</button>
+                        </div>
+                    </form>
+                    
                 </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid " src="/img/svg/products/sneakerForSale2.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid" src="/img/svg/products/sneakerForSale1.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>   
+                    
             </div>
         </div>
-        
+    </section>
     </section>
     <!-- video -->
     <div class="container">
@@ -144,79 +174,67 @@
         </div>
     </div>
 
-    <!-- product gallery -->
+    <!-- product -->
     <section class="p-5 text-center">
         <div class="container bg-light">
-            <h2 class="my-4 pt-4">Sneaker Gallery</h2>
+            <h2 class="my-4 pt-4 " id="newReleasesHeader">Sneaker Gallery</h2>
+            
             <div class="row">
-                <div class="col-md">
-                    <a href="/html/product1.html">
-                        <div class="card bg-white text-dark">
-                            <img class="img-fluid" src="/img/svg/products/sneakerForSale3.svg" alt="Promo of product X">
+              
+                <div class="col-md"  th:each="sneaker, stat: ${sneaker}">
+                    <a href="#" th:href="@{/product}">
+                        <div class="card bg-white text-dark" style="width: 18rem;">
+                        
+                            <img class="img-fluid " th:src="@{${sneaker.image}}" alt="Promo of product X">
                         </div>
                     </a>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid " src="/img/svg/products/sneakerForSale2.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid" src="/img/svg/products/sneakerForSale1.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div> 
-                <div class="col-md">
-                    <a href="/html/product1.html">
-                        <div class="card bg-white text-dark">
-                            <img class="img-fluid" src="/img/svg/products/sneakerForSale4.svg" alt="Promo of product X">
+                    
+                    <h4 th:text="${sneaker.name}"/>
+                  
+                    <h4 th:text="${sneaker.marketvalue}"/>
+                    
+                    <form action="#" th:action="@{/product}" method="post" th:object="${s1}">
+                    
+                        <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 name" class=""  th:value="${sneaker.name}" th:name="name" th:id="name">
                         </div>
-                    </a>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>  
-            </div>
-            <div class="row">
-                <div class="col-md">
-                    <a href="/html/product1.html">
-                        <div class="card bg-white text-dark">
-                            <img class="img-fluid" src="/img/svg/products/sneakerForSale3.svg" alt="Promo of product X">
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 price" class="" th:value="${sneaker.marketvalue}" th:name="marketvalue" th:id="marketvalue" >
                         </div>
-                    </a>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid " src="/img/svg/products/sneakerForSale2.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>
-                <div class="col-md">
-                    <div class="card bg-white text-dark">
-                        <img class="img-fluid" src="/img/svg/products/sneakerForSale1.svg" alt="Promo of product X">
-                    </div>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div> 
-                <div class="col-md">
-                    <a href="/html/product1.html">
-                        <div class="card bg-white text-dark">
-                            <img class="img-fluid" src="/img/svg/products/sneakerForSale4.svg" alt="Promo of product X">
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 image" class="" th:value="${sneaker.image}" th:name="image" th:id="image">
                         </div>
-                    </a>
-                    <h4 class="pt-4">Product Name</h4>
-                    <h4>$100 USD</h4>
-                </div>  
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 sku" class="" th:value="${sneaker.sku}" th:name="sku" th:id="sku">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 brand" class="" th:value="${sneaker.brand}" th:name="brand" th:id="brand">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 gender" class="" th:value="${sneaker.gender}" th:name="gender" th:id="gender">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 colorway" class="" th:value="${sneaker.colorway}" th:name="colorway" th:id="colorway">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 realease date" class="" th:value="${sneaker.releasedate}" th:name="releasedate" th:id="releasedate">
+                        </div>
+                         <div class="col-lg-7">
+                            <input type="hidden" placeholder="s1 retail price" class="" th:value="${sneaker.retailprice}" th:name="retailprice" th:id="retailprice">
+                        </div>
+                        
+                        
+                        
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn btn-dark btn-sm">submit</button>
+                        </div>
+                    </form>
+                    
+                </div>
+                    
             </div>
         </div>
+    </section>
         
     </section>
     <!-- footer -->

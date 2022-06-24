@@ -99,6 +99,7 @@ public class MainController {
 	  public String showproductForm(@ModelAttribute("s1") Sneaker s1, Model model) {
 		  model.addAttribute("s1", s1);
 		  System.out.println(s1);
+		  model.addAttribute( "sneaker", repo.getSneakers());
 		 
 	      return "product";
 	  }
